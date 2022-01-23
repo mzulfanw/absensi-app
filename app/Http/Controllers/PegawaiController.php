@@ -50,21 +50,13 @@ class PegawaiController extends Controller
             }
             return redirect()->route('pegawai.absen2');
         } else {
-            return redirect()->back();
+            Session::flash('gagal', 'Maaf akun tersebut tidak ada');
+            return back();
         }
     }
 
     public function index2()
     {
-        // Absen::create([
-        //     'pegawai_id' => $pegawaiId,
-        //     'image' => $fileName,
-        //     'jam_masuk' => Carbon::now()
-        // ]);
-        // dd(Session::get('nama_lengkap'));
-        // $data = DB::table('pegawai')->join('absensi', 'pegawai.id', '=', 'absensi.pegawai_id')
-        //     ->where('pegawai.nomer_pegawai', '=', Session::get('nomer_pegawai'))->get();
-        // dd($data);
         return view('PegawaiK');
     }
 

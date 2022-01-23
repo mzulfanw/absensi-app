@@ -8,7 +8,7 @@
     <section class="section">
         <div class="card">
             <div class="card-header">
-                Table Divisi
+                Table Absensi
                 <a href="{{ route('admin.absensi.cetak') }}" class="float-end btn btn-primary">Report to PDF</a>
             </div>
 

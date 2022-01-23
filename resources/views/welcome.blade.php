@@ -19,7 +19,7 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo"></a>
+                        <h1>Absensi </h1>
                     </div>
                     <h1 class="auth-title">Silahkan Masuk</h1>
                     @if ($message = Session::get('gagal'))

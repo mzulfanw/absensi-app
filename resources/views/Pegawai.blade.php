@@ -22,14 +22,19 @@
 
 <body>
     <div class="container mt-5 ">
+        @if ($message = Session::get('gagal'))
+            <div class="alert alert-danger alert-block mx-4">
+                <strong>{{ $message }}</strong>
+            </div>
+        @endif
         <h1 class="text-center mb-5">Selamat Datang, silahkan Login</h1>
         <form action="{{ route('pegawai.absen') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-md-12">
-                    <input type="text" name="nomer_pegawai" class="form-control mb-4"
-                        placeholder="Masukan Nomer Pegawai sebagai username">
-                    <input type="password" name="nama" class="form-control mb-4 "
+                    <input type="number" name="nomer_pegawai" class="form-control mb-4"
+                        placeholder="Masukan Nomer Pegawai sebagai username" required>
+                    <input type="password" name="nama" class="form-control mb-4 " required
                         placeholder="Masukan Nama anda sebagai password">
                 </div>
                 <div class="col-md-6">

@@ -3,6 +3,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/jquery-datatables/jquery.dataTables.bootstrap5.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/fontawesome/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/sweetalert2/sweetalert2.min.css') }}">
 @endpush
 @section('content')
     <section class="section">
@@ -123,6 +124,7 @@
     <script src="{{ asset('assets/vendors/jquery-datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/jquery-datatables/custom.jquery.dataTables.bootstrap5.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/fontawesome/all.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/sweetalert2/sweetalert2.all.min.js') }}"></script>
     <script>
         // Jquery Datatable
         $(document).ready(function() {
@@ -149,8 +151,15 @@
                 cache: false,
                 processData: false,
                 success: function() {
-                    alert('berhasil')
-                    location.reload()
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil',
+                        showConfirmButton: false,
+                        timer: 2500
+                    })
+                    setTimeout(() => {
+                        location.reload()
+                    }, 3000);
                 },
                 complete: function() {
                     $('#form-teams')[0].reset()

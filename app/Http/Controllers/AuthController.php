@@ -15,7 +15,7 @@ class AuthController extends Controller
 
         $user = Auth::attempt(['email' => $username, 'password' => $password]);
         if (!$user) {
-            Session::flash('gagal', 'Your account doesnt match with our database');
+            Session::flash('gagal', 'Maaf akun tersebut tidak ada');
             return back();
         }
         return redirect()->route('admin.dashboard');
