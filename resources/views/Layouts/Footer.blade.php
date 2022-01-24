@@ -3,9 +3,7 @@
         <div class="float-start">
             <p>2021 &copy; Template by Mazer</p>
         </div>
-        <div class="float-end">
-            <p>Developed By @mzulfanw</p>
-        </div>
+
     </div>
 </footer>
 </div>

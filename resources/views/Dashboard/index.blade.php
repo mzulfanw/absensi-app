@@ -67,6 +67,10 @@
                             <div class="ms-3 name">
                                 <h5 class="font-bold">{{ Auth::user()->name }}</h5>
                                 <h6 class="text-muted mb-0">{{ Auth::user()->email }}</h6>
+                                <form action="{{ route('auth.logout') }}" method="POST">
+                                    @csrf
+                                    <button class="btn btn-danger btn-sm mt-3 w-100">Logout</button>
+                                </form>
                             </div>
                         </div>
                     </div>

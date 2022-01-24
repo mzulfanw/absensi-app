@@ -32,7 +32,7 @@ Route::post('/absensi-pegawai/keluar/{nomer_pegawai}', [PegawaiController::class
 
 // Login Admin
 Route::post('auth', [AuthController::class, 'postLogin'])->name('auth.login');
-
+Route::post('logout', [AuthController::class, 'logout'])->name('auth.logout');
 Route::group([
     'as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'admin', 'middleware' => 'auth'
 ], function () {
@@ -55,4 +55,8 @@ Route::group([
 
     Route::get('/absensi', [AbsensiController::class, 'index'])->name('absensi.page');
     Route::get('/absensi/cetak', [AbsensiController::class, 'cetak'])->name('absensi.cetak');
+
+
+
+    // Logout
 });
